@@ -13,7 +13,7 @@ interface PostsListProps {
 
 const PostsList = ({users, posts}: PostsListProps) => {
   const showPosts = () => {
-    if (!posts[0]) return <Loader/>;
+    if (!posts[0]) return <H1>Выберите пользователя...</H1>;
     else {
       const user = users.find((u) => u.id === posts[0].userId);
       return (
@@ -38,6 +38,10 @@ const PostsList = ({users, posts}: PostsListProps) => {
   );
 };
 
+const H1 = styled.h1`
+  color: #384758;
+  padding: 35px;
+`;
 const Posts = styled.div`
   margin-right: 80px;
   @media (max-width: 767px) {
